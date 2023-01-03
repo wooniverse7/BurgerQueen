@@ -17,4 +17,13 @@ public class ProductRepository {
     public Product[] getAllProducts() {
         return products;
     }
+
+    // 상품 검색 기능을 자율적으로 수행할 수 있도록 상품품 검색코드를 여기에 옮겨줌
+    // -> Cart에서 findById()만 호출 하면 됨
+    public Product findById(int productId) {
+        for(Product product : products) {
+            if(product.getId() == productId) return product;
+        }
+        return null;
+    }
 }
